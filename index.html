@@ -1,15 +1,25 @@
 <html>
 <head>
-<title>Stairway - A Night of Zeppelin</title>
-
+<title>Zeppelin Alive - Lyrics PowerPoints</title>
 </head>
 <body background-color="#000000">
-<center>
-    <image src="heather_john.png"/>
-</center>
 
-
+    
+<?php
+$path = ".";
+$dh = opendir($path);
+$i=1;
+while (($file = readdir($dh)) !== false) {
+    if($file != "." && $file != ".." && $file != "index.php" && $file != ".htaccess" && $file != "error_log" && $file != "cgi-bin") {
+        echo "<a href='$path/$file'>$file</a><br /><br />";
+        $i++;
+    }
+}
+closedir($dh);
+?> 
+    
 </body>
 
-
 </html>
+
+
